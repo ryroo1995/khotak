@@ -165,9 +165,9 @@ margin: 0px 0px 0px 0px;
     background-color: #08526d;
 }
 .section2 .content-section2{
-        border: 2px solid #08526d;
+    border: 1px solid #08526d;
     padding: 50px;
-    border-radius: 29%;
+    border-radius: 29px;
 }
 .section3{
       background-color: #f2f7f7;
@@ -183,6 +183,16 @@ margin: 0px 0px 0px 0px;
 }
 .section4{
     padding: 100px;
+}
+#box{
+    background-color: black;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    margin-left: 70px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
 }
 /******************************************************/
 /***********************uq page****************************/
