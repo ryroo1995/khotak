@@ -287,14 +287,20 @@
 
 
 /*************************universty page **************************/
-
-.tg  {border-collapse:collapse;
-    border-spacing:0;
+.topuniv{
+    padding: 100px;
 }
-.tg td{font-family: Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;
+.topuniv h1{
+      margin-bottom: 16px;
+    font-weight: bold;
 }
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-0lax{text-align:left;vertical-align:top}
+.topuniv .tg  {border-collapse:collapse;border-spacing:0;}
+.topuniv .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.topuniv .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;
+background-color: #2a87a9;
+    color: #fff;
+}
+.topuniv .tg .tg-0lax{text-align:left;vertical-align:top}
 
 /******************************************************/
 .footer {
