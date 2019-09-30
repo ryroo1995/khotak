@@ -271,18 +271,24 @@
 
 /***********************************************/
 /******about page ********/
-#logo {
+.sectionaout{
+    padding: 100px;
+}
+
+.logos {
     width: 358px;
     height: 324px;
     padding: 0px;
     margin: 0px;
 
 }
-
-.med {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.sectionaout h2{
+font-size: 46px;
+}
+.sectionaout p{
+        font-size: 24px;
+    color: #716e6e;
+    text-align: justify;
 }
 
 
@@ -302,6 +308,22 @@ background-color: #2a87a9;
 }
 .topuniv .tg .tg-0lax{text-align:left;vertical-align:top}
 
+/******************************************************/
+.image-subject{
+    padding: 100px;
+}
+.image-subject h2{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.image-subject .image-content{
+    margin: 10px;
+}
+.image-subject .image-content img{
+    width: 100%;
+        margin-bottom: 22px;
+}
 /******************************************************/
 .footer {
     background-color: #08526d;
