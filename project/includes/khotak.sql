@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22 أكتوبر 2019 الساعة 20:18
+-- Generation Time: 27 نوفمبر 2019 الساعة 05:20
 -- إصدار الخادم: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -25,27 +25,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `disc`
---
-
-CREATE TABLE `disc` (
-  `id` int(11) NOT NULL,
-  `vision` varchar(255) NOT NULL,
-  `message` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- بنية الجدول `employ`
 --
 
 CREATE TABLE `employ` (
-  `id` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `number` varchar(255) NOT NULL,
-  `position` text NOT NULL
+  `empID` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `number` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `position` varchar(255) DEFAULT NULL,
+  `univID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -55,34 +44,33 @@ CREATE TABLE `employ` (
 --
 
 CREATE TABLE `job` (
-  `id` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `idspecial` int(11) NOT NULL
+  `jobID` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `Field` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `link`
+-- بنية الجدول `major`
 --
 
-CREATE TABLE `link` (
-  `id` int(11) NOT NULL,
-  `link` varchar(255) NOT NULL,
-  `condtionlink` varchar(255) NOT NULL
+CREATE TABLE `major` (
+  `majorID` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `specialty`
+-- بنية الجدول `pesonalaty`
 --
 
-CREATE TABLE `specialty` (
-  `name` varchar(255) NOT NULL,
-  `subject` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `idsub` int(11) NOT NULL
+CREATE TABLE `pesonalaty` (
+  `personID` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `field` varchar(255) DEFAULT NULL,
+  `jobID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -92,10 +80,12 @@ CREATE TABLE `specialty` (
 --
 
 CREATE TABLE `subject` (
-  `specialty` varchar(255) NOT NULL,
-  `level` varchar(255) NOT NULL,
-  `criditehour` int(100) NOT NULL,
-  `idsubject` int(11) NOT NULL
+  `subjectID` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `discription` varchar(255) DEFAULT NULL,
+  `univID` int(11) DEFAULT NULL,
+  `jobID` int(11) DEFAULT NULL,
+  `majorID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -105,12 +95,14 @@ CREATE TABLE `subject` (
 --
 
 CREATE TABLE `universty` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `address` text NOT NULL,
-  `country` text NOT NULL,
-  `rank` int(11) NOT NULL
+  `univID` int(11) NOT NULL,
+  `contry` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `rank` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `conditions` varchar(255) DEFAULT NULL,
+  `subjectID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -118,114 +110,44 @@ CREATE TABLE `universty` (
 --
 
 --
--- Indexes for table `disc`
---
-ALTER TABLE `disc`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `employ`
 --
 ALTER TABLE `employ`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`empID`),
+  ADD KEY `FK` (`univID`);
 
 --
--- Indexes for table `link`
+-- Indexes for table `job`
 --
-ALTER TABLE `link`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `job`
+  ADD PRIMARY KEY (`jobID`);
 
 --
--- Indexes for table `specialty`
+-- Indexes for table `major`
 --
-ALTER TABLE `specialty`
-  ADD PRIMARY KEY (`idsub`);
+ALTER TABLE `major`
+  ADD KEY `pk` (`majorID`);
+
+--
+-- Indexes for table `pesonalaty`
+--
+ALTER TABLE `pesonalaty`
+  ADD PRIMARY KEY (`personID`),
+  ADD KEY `FK` (`jobID`);
 
 --
 -- Indexes for table `subject`
 --
 ALTER TABLE `subject`
-  ADD PRIMARY KEY (`idsubject`);
+  ADD PRIMARY KEY (`subjectID`),
+  ADD KEY `FK` (`univID`,`jobID`,`majorID`);
 
 --
 -- Indexes for table `universty`
 --
 ALTER TABLE `universty`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `disc`
---
-ALTER TABLE `disc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `employ`
---
-ALTER TABLE `employ`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `link`
---
-ALTER TABLE `link`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `specialty`
---
-ALTER TABLE `specialty`
-  MODIFY `idsub` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `subject`
---
-ALTER TABLE `subject`
-  MODIFY `idsubject` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `universty`
---
-ALTER TABLE `universty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- قيود الجداول المحفوظة
---
-
---
--- القيود للجدول `disc`
---
-ALTER TABLE `disc`
-  ADD CONSTRAINT `disc` FOREIGN KEY (`id`) REFERENCES `universty` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- القيود للجدول `employ`
---
-ALTER TABLE `employ`
-  ADD CONSTRAINT `employ` FOREIGN KEY (`id`) REFERENCES `universty` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- القيود للجدول `link`
---
-ALTER TABLE `link`
-  ADD CONSTRAINT `link` FOREIGN KEY (`id`) REFERENCES `universty` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- القيود للجدول `specialty`
---
-ALTER TABLE `specialty`
-  ADD CONSTRAINT `subject` FOREIGN KEY (`idsub`) REFERENCES `subject` (`idsubject`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- القيود للجدول `subject`
---
-ALTER TABLE `subject`
-  ADD CONSTRAINT `universty` FOREIGN KEY (`idsubject`) REFERENCES `universty` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD PRIMARY KEY (`univID`),
+  ADD KEY `FK` (`subjectID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
