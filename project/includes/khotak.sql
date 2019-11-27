@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27 نوفمبر 2019 الساعة 05:20
+-- Generation Time: 27 نوفمبر 2019 الساعة 21:05
 -- إصدار الخادم: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -32,7 +32,7 @@ CREATE TABLE `employ` (
   `empID` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `number` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
   `position` varchar(255) DEFAULT NULL,
   `univID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -49,6 +49,13 @@ CREATE TABLE `job` (
   `Field` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- إرجاع أو استيراد بيانات الجدول `job`
+--
+
+INSERT INTO `job` (`jobID`, `name`, `Field`) VALUES
+(1, 'TEACHER', 'MATH');
+
 -- --------------------------------------------------------
 
 --
@@ -56,7 +63,7 @@ CREATE TABLE `job` (
 --
 
 CREATE TABLE `major` (
-  `majorID` int(11) DEFAULT NULL,
+  `majorID` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -69,9 +76,16 @@ CREATE TABLE `major` (
 CREATE TABLE `pesonalaty` (
   `personID` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `field` varchar(255) DEFAULT NULL,
+  `disc` varchar(255) DEFAULT NULL,
   `jobID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- إرجاع أو استيراد بيانات الجدول `pesonalaty`
+--
+
+INSERT INTO `pesonalaty` (`personID`, `name`, `disc`, `jobID`) VALUES
+(1, 'INTP', 'JHV', 1);
 
 -- --------------------------------------------------------
 
@@ -148,6 +162,46 @@ ALTER TABLE `subject`
 ALTER TABLE `universty`
   ADD PRIMARY KEY (`univID`),
   ADD KEY `FK` (`subjectID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `employ`
+--
+ALTER TABLE `employ`
+  MODIFY `empID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `job`
+--
+ALTER TABLE `job`
+  MODIFY `jobID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `major`
+--
+ALTER TABLE `major`
+  MODIFY `majorID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pesonalaty`
+--
+ALTER TABLE `pesonalaty`
+  MODIFY `personID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `subject`
+--
+ALTER TABLE `subject`
+  MODIFY `subjectID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `universty`
+--
+ALTER TABLE `universty`
+  MODIFY `univID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
