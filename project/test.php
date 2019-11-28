@@ -21,7 +21,9 @@ include('includes/header.php');
 <div class="container">
 <!------------------------------------------------------------------->
 <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <?php for($i=1;$i<45;$i++) { ?>
+
+<p>The form below contains three inline radio buttons:</p>
   <form >
     <label class="radio-inline">
       <input type="radio" name="optradio" checked><span>Option 1</span>
@@ -36,6 +38,8 @@ include('includes/header.php');
       <input type="radio" name="optradio"><span>Option 4</span>
     </label>
   </form>
+<?php  } ?>
+
     </div>
 <!------------------------------------------------------------------->
     <!------------------------------------------------------------------->
