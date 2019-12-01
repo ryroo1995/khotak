@@ -1,3 +1,7 @@
+<?php
+
+include('includes/connect.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,7 +45,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php">Home</a></li>
-          <li><a href="subject.php">subject</a></li>
+    <li><a href="subject.php?subjectId=major">subject</a></li>
           <li><a href="unversty.php">University</a></li>
           <li><a href="#">Searching</a></li>
           <li><a href="about.php">About</a></li>

@@ -1,0 +1,3 @@
+SELECT subject.name,universty.name
+FROM universty,subject_universty,subject
+WHERE universty.univID=subject_universty.univID AND subject.subjectID=subject_universty.subjectID AND subject.subjectID=1

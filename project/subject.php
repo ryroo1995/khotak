@@ -1,9 +1,12 @@
 <?php
 include('includes/header.php');
+$subjectId="";
+if(isset($_GET['subjectId'])){
+    $sub=$_GET['subjectId'];
+}else{
+    $sub="major";
+}
 ?>
-
-
-
 <!-------------------------------------------------------------------------------------------------------------------------------------->
     <div class="content-section">
         <div class="overflow"></div>
@@ -20,94 +23,121 @@ include('includes/header.php');
     </div>
 <!-------------------------------------------------------------------------------------------------------------------------------------->
    <!-- section 1------------------------------------------------------------------------------------------------------------------ -->
+<?php
+if($sub=="major"){
+?>
 <div class="image-subject text-center">
       <div class="container">
-          <h2>Subject</h2>
+          <h2>Major</h2>
            <div class="row">
-                <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-                                  <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-                                  <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-           </div>
-                      <div class="row">
-                <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-                                  <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-                                  <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-           </div>
-                      <div class="row">
-                <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-                                  <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-                                  <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-           </div>
-                      <div class="row">
-                <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-                                  <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
-                                  <div class="col-md-4">
-                 <div class="image-content">
-                  <img src="https://via.placeholder.com/150">
-                  <h1>Text</h1>
-                   </div>
-                  </div>
+             <?php
+               global $con;
+
+            $stmt=$con->prepare("select * FROM major ");
+              $stmt->execute();
+               $majors=$stmt->fetchAll();
+                $counts3=$stmt->rowCount();
+               foreach($majors as $maj){
+                 ?>
+                 <div class="col-md-4">
+                <?php
+
+                     ?>
+<a href="?Id=<?php echo $maj['majorID'] ?>&subjectId=pageSub">
+                <?php echo $maj['name']; ?>
+                </a>
+                 </div>
+                 <?php
+               }
+
+              ?>
            </div>
 
       </div>
 </div>
-<!-------------------------------------------------------------------->
 
+<!-------------------------------------------------------------------->
+<?php
+}elseif($sub=="pageSub"){
+
+        $id=$_GET['Id'];
+
+
+ ?>
+ <div class="image-subject text-center">
+      <div class="container">
+          <h2>subjects</h2>
+           <div class="row">
+             <?php
+               global $con;
+
+            $stmt=$con->prepare("select * FROM subject
+            where majorid=?");
+              $stmt->execute(array($id));
+               $subjects=$stmt->fetchAll();
+                $counts3=$stmt->rowCount();
+               foreach($subjects as $subj){
+                 ?>
+                 <div class="col-md-4">
+                <?php
+
+                     ?>
+<a href="?IdSub=<?php echo $subj['subjectID']; ?>&subjectId=pageSubs">
+                <?php echo $subj['name']; ?>
+                </a>
+                 </div>
+                 <?php
+               }
+
+              ?>
+           </div>
+
+      </div>
+</div>
+
+
+
+
+
+
+
+   <?php
+}elseif($sub=="pageSubs"){
+    $ids=$_GET['IdSub'];
+?>
+<div class="subjectname text-center">
+     <div class="container">
+         <?php
+     $stmt=$con->prepare("select * FROM subject
+            where subjectID=?");
+              $stmt->execute(array($ids));
+               $subjects=$stmt->fetch();
+                $counts4=$stmt->rowCount();
+    if($counts4 >0){
+         ?>
+          <h2><?php echo $subjects['name'];?></h2>
+          <p><?php echo $subjects['discription'];?></p>
+          <?php
+             $stmt6=$con->prepare("SELECT universty.name
+FROM universty,subject_universty,subject
+WHERE universty.univID=subject_universty.univID AND subject.subjectID=subject_universty.subjectID AND subject.subjectID=?");
+            $stmt6->execute(array($ids));
+               $subjects=$stmt6->fetchAll();
+                $counts4=$stmt6->rowCount();
+        foreach($subjects as $s){
+           ?>
+           <p><?php echo $s['name'];?></p>
+           <?php
+        }
+         ?>
+     </div>
+</div>
+<?php
+    }
+}
+
+
+?>
 <!---------------------------------------------------------------------->
 <?php
 include('includes/footer.php');
