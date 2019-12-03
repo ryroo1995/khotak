@@ -1,124 +1,30 @@
 <?php
 include('includes/header.php');
-
-
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    $names=$_POST['Name'];
-    $country=$_POST['country'];
-    $address=$_POST['address'];
-    $subject=$_POST['subject'];
-    $type=$_POST['type'];
-    $link=$_POST['link'];
-    $rank=$_POST['rank'];
-
-    //staff
-    $position=$_POST['position'];
-    $name=$_POST['names'];
-    $email=$_POST['email'];
-    $number=$_POST['number'];
-
-   global $names;
-
-
-    //insert code
-                      /////////////////start notification
-                     $stmtnj=$con->prepare("INSERT INTO
-                                universty(name,contry,address,type,rank,link)
-                                VALUES(:name,:contry,:address,:type,:rank,:link)");
-                    $stmtnj->execute(array(
-                        'name'     =>$names,
-                        'contry'     =>$country,
-                        'address'    =>$address,
-                        'type'       =>$type,
-                        'rank'       => $rank ,
-                        'link'       =>$link
-                    ));
-/////////////////////////////////////////////////////////////////////////////////////////////
-                        if($stmtnj){
-                //fetch subject
-                                 $stmt=$con->prepare("select * FROM subject");
-              $stmt->execute();
-               $subjects=$stmt->fetchAll();
-
-                foreach( $subjects as $sa){
-                    $nnsub=$sa['name'];
-                    if($nnsub ==$subject){
-                        $newSubject=$subject;
-            $stmtssa=$con->prepare("select * FROM subject where name=?");
-              $stmtssa->execute(array($newSubject));
-               $subjects=$stmtssa->fetchAll();
-                    foreach( $subjects as $u){}
-
-                        $newSubject=$u['subjectID'];
-                    }
-                }
-                  $counts8=$stmt->rowCount();
-                     global  $newSubject;
-/////////////////////////////////////////////////////////////////////////////////////////////
-                   if($counts8>0){
-                $stmsst=$con->prepare("select * FROM universty where name=?");
-              $stmsst->execute(array($names));
-               $uni=$stmsst->fetchAll();
-                foreach( $uni as $u){
-                 $id=$u['univID'];
-                }
-                            global $id;
-                 $counts5=$stmsst->rowCount();
-                if($counts5>0){
-
-                $stmtn=$con->prepare("INSERT INTO
-                                subject_universty(subjectID,univID)
-                                VALUES(:sub,:un)");
-                    $stmtn->execute(array(
-                        'sub'     => $newSubject,
-                        'un'   =>$id
-
-                    ));
-
-                }
-
-                   }
- /////////////////////////////////////////////////////////////////////////////////////////////
-
-                //insert employ
-                    $stmaa=$con->prepare("INSERT INTO
-                                employ(name,number,email,position,univID)
-                                VALUES(:name,:number,:email,:position,:univID)");
-                    $stmaa->execute(array(
-                        'name'     =>$name,
-                        'number'    =>$number,
-                        'email'     =>$email,
-                        'position'    =>$position,
-                        'univID'       =>$id
-                    ));
-                header('Location: index.php');
-                        }//end insert all
-}
-
-
-
-
-
-
-
-
 ?>
 
 <!-------------------------------------------------------------------------------------------------------------------------------------->
+    <div class="content-section">
+        <div class="overflow"></div>
+        <div class="container">
+      <div class="con">
+    <div class="wel" id="well-s">
+       Searchin Page
+    </div> <!-- end of welcom -->
 
+            </div><!--end con-->
+       </div><!-----------------end container-->
+    </div>
+
+<!---------------------------------------------------------------------->
 <div class="content ">
      <div class="overflow"></div>
     <div class="container">
         <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
    <div class="forms-section">
 <div class="row">
-    <div class="col-sm-6">
-
-  <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
-    <input type="text" name="Name" class="form-control" id="exampleInputEmail1" placeholder="Name of the University">
-  </div>
-  <div class="form-group">
+    <div class="col-md-12">
+      <h2>Searching By University</h2>
+       <div class="form-group">
     <label for="exampleInputEmail1">Country</label>
  <select id="country" name="country" class="form-control">
                 <option value="Afghanistan">Afghanistan</option>
@@ -367,10 +273,36 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                 <option value="Zimbabwe">Zimbabwe</option>
             </select>
   </div>
-       <div class="form-group">
-    <label for="exampleInputEmail1">Address</label>
-    <input type="text" name="address" class="form-control" id="exampleInputEmail1" placeholder="city">
+                   <div class="form-group">
+    <label for="exampleInputEmail1">Type of learn </label>
+    <select class="form-control" name="type">
+        <option value="open">Open Learning</option>
+        <option value="home">Home Learning</option>
+        <option value="traditional">traditional Learnig</option>
+    </select>
   </div>
+<button type="submit" name='univ-button' class="btn btn-primary">Submit</button>
+
+
+    </div>
+
+
+    <!--------------------------form two--------------------------------------------------->
+        </div><!--end row-->
+      </div>
+        </form>
+    </div><!--end container-->
+</div>
+<!---------------------------------------------------------------------->
+<div class="content ">
+     <div class="overflow"></div>
+    <div class="container">
+        <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
+   <div class="forms-section">
+<div class="row">
+    <div class="col-md-12">
+      <h2>Searching By Subject</h2>
+
              <div class="form-group">
     <label for="exampleInputEmail1">Subject</label>
     <select class="form-control" name="subject">
@@ -388,74 +320,80 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     </select>
   </div>
-                   <div class="form-group">
-    <label for="exampleInputEmail1">Type of learn </label>
-    <select class="form-control" name="type">
-        <option value="open">Open Learning</option>
-        <option value="home">Home Learning</option>
-        <option value="traditional">traditional Learnig</option>
-    </select>
-  </div>
-
-                <div class="form-group">
-    <label for="exampleInputEmail1">Link Of University</label>
-    <input type="text" name="link" class="form-control" id="exampleInputEmail1" placeholder="credit">
-  </div>
-                <div class="form-group">
-    <label for="exampleInputEmail1">Ranking</label>
-    <input type="number" name="rank" class="form-control" id="exampleInputEmail1" placeholder="ranking">
-  </div>
+<button type="submit" name='sub-button'class="btn btn-primary">Submit</button>
 
 
     </div>
 
 
     <!--------------------------form two--------------------------------------------------->
-
-
-    <div class="col-md-6">
-
-           <!-------------------------------------------------------------------------->
-        <div class="ceo">
-
-                <h2>Staff</h2>
-        <div class="form-group">
-           <select id="position" name="position" class="form-control">
-                <option value="CEO">CEO</option>
-                <option value="VICE">VICE CHAIRE</option>
-                <option value="StudentAffairs">Student Affairs</option>
-                <option value="RegestrationSection">Regestration Section</option>
-            </select>
-
-        </div>
-<div class="form-group">
-    <label>Name</label>
-    <input name="names" type="text" class="form-control" id="name-ceo" placeholder="ENTER NAME">
-  </div>
-                   <div class="form-group">
-    <label>Email</label>
-    <input name="email" type="text" class="form-control" id="email-ceo" placeholder="ENTER EMAIL">
-  </div>
-                   <div class="form-group">
-    <label>Number</label>
-    <input name="number" type="text" class="form-control" id="number-ceo" placeholder="ENTER number">
-  </div>
-
-        </div>
-
-
-         <button type="submit" class="btn btn-primary">Submit</button>
-
-
-    </div>
-
         </div><!--end row-->
-
-
       </div>
         </form>
     </div><!--end container-->
 </div>
+<!---------------------------------------------------------------------->
+<?php
+if($_SERVER['REQUEST_METHOD']=='POST'){
+if(isset($_POST['univ-button'])){
+        $country=$_POST['country'];
+    $type=$_POST['type'];
+    ?>
+
+                              <div class="container">
+            <h2>Table</h2>
+           <?php
+            $stmt=$con->prepare("SELECT  universty.name as nn, universty.contry , universty.address , universty.type , subject.name  FROM universty,subject_universty,subject WHERE universty.univID=subject_universty.univID AND subject.subjectID=subject_universty.subjectID  AND universty.contry =? and universty.type =?");
+              $stmt->execute(array($country,$type));
+               $subjects=$stmt->fetchAll();
+
+                foreach( $subjects as $sa){
+                    ?>
+
+                <p><?php echo  $sa['nn'];?></p>
+                 <p><?php echo $sa['contry'];?></p>
+                 <p><?php echo $sa['address'];?></p>
+                 <p><?php echo $sa['type'];?></p>
+                 <p><?php echo $sa['name'];?></p>
+
+                  <?php
+                }
+    ?>
+      </div>
+    <?php
+}
+if(isset($_POST['sub-button'])){
+  ?>
+   <div class="container">
+    <h2>Table</h2>
+       <?php
+        $subject=$_POST['subject'];
+                $stmt=$con->prepare("SELECT  universty.name , universty.contry , universty.address , universty.type , subject.name as nn  FROM universty,subject_universty,subject WHERE universty.univID=subject_universty.univID AND subject.subjectID=subject_universty.subjectID AND subject.name =?");
+              $stmt->execute(array($subject));
+               $subjects=$stmt->fetchAll();
+
+                foreach( $subjects as $sa){
+                    ?>
+                    <div class="container">
+
+                <p><?php echo  $sa['nn'];?></p>
+                 <p><?php echo $sa['contry'];?></p>
+                 <p><?php echo $sa['address'];?></p>
+                 <p><?php echo $sa['type'];?></p>
+                 <p><?php echo $sa['name'];?></p>
+                 </div>
+                  <?php
+                }
+    ?>
+</div>
+    <?php
+}
+
+}
+
+
+
+?>
 <!---------------------------------------------------------------------->
 <?php
 include('includes/footer.php');
