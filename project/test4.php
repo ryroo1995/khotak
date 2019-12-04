@@ -295,9 +295,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
 
-
-        echo "letter five". $_SESSION['letterone']."Letter six".$_SESSION['letterTwo'];
-
         if($_SESSION['letterone'] >$_SESSION['letterTwo']){
             $x="T";
         }else{
@@ -305,14 +302,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
  $TestQuizThree=$x;
 $_SESSION['TestQuizThree']=  $TestQuizThree;
-        echo "<br/>". $TestQuizThree;
 
 
 
         }}
 
 
-     var_dump($_SESSION);
       ?>
 <!------------------------------------------------------------------->
 

@@ -11,7 +11,7 @@ include('includes/functions.php');
         <div class="container">
       <div class="con">
     <div class="wel" id="well-s">
-      <RESULT></RESULT> Page
+      <RESULT></RESULT> Result
     </div> <!-- end of welcom -->
 
             </div><!--end con-->
@@ -55,7 +55,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
 
-        echo "letter seven". $_SESSION['letterone']."Letter  eight".$_SESSION['letterTwo'];
 
         if($_SESSION['letterone'] >$_SESSION['letterTwo']){
             $x="J";
@@ -64,7 +63,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
  $TestQuizFour=$x;
 $_SESSION['TestQuizFour']=  $TestQuizFour;
-        echo "<br/>". $TestQuizFour;
 
 
     }
@@ -74,15 +72,61 @@ $_SESSION['TestQuizFour']=  $TestQuizFour;
 
 
 }
-     var_dump($_SESSION);
+$res=$_SESSION['TestQuizOne'].$_SESSION['TestQuizTwo'].$_SESSION['TestQuizThree'].$_SESSION['TestQuizFour'];
+global $res;
       ?>
 <!------------------------------------------------------------------->
-<div class="hhh">
-    <p>TEST ONE<?PHP echo $_SESSION['TestQuizOne'];?></p>
-      <p>TEST two<?PHP echo $_SESSION['TestQuizTwo'];?></p>
-        <p>TEST three<?PHP echo $_SESSION['TestQuizThree'];?></p>
-          <p>TEST four<?PHP echo $_SESSION['TestQuizFour'];?></p>
+<div class="result text-center">
+   <div class="container">
 
+          <p>Result:<?php echo $res; ?></p>
+
+          <?php
+                      $stmt=$con->prepare("select * FROM personalaty where personID=? ");
+              $stmt->execute(array( $res));
+               $person=$stmt->fetchAll();
+                $counts3=$stmt->rowCount();
+               foreach($person as $maj){
+                    $personID= $maj['name'];
+                    $personDIS= $maj['disc'];
+                 ?>
+                 <p><?php echo $personID;?></p>
+                 <p><?php echo $personDIS;?></p>
+
+                 <!---------------------------table---------------->
+                 <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Personality</th>
+      <th scope="col">Jobs</th>
+      <th scope="col">Major</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <?php
+                $stmt2=$con->prepare("SELECT personalaty.name AS personalty , job.name as jobs ,major.name AS major FROM personalaty,job,major WHERE job.personID =personalaty.personID AND job.majorID = major.majorID AND personalaty.personID = ? ");
+              $stmt2->execute(array( $res));
+               $person2=$stmt2->fetchAll();
+               foreach($person2 as $majs){
+                   ?>
+                   <tr>
+                    <td><?php echo $majs['personalty']?></td>
+                    <td><?php echo $majs['jobs']?></td>
+                    <td><?php echo $majs['major']?></td>
+            </tr>
+                   <?php
+               }
+        ?>
+
+
+
+  </tbody>
+</table>
+                 <?php
+               }
+           ?>
+</div>
 </div>
 
 <!---------------------------------------------------------------------->

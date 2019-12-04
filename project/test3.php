@@ -330,7 +330,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
 
-        echo "letter one". $_SESSION['letterone']."Letter two".$_SESSION['letterTwo'];
 
         if($_SESSION['letterone'] >$_SESSION['letterTwo']){
             $x="N";
@@ -339,7 +338,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
  $TestQuizTwo=$x;
 $_SESSION['TestQuizTwo']=  $TestQuizTwo;
-        echo "<br/>". $TestQuizTwo;
 
 
     }
@@ -349,7 +347,6 @@ $_SESSION['TestQuizTwo']=  $TestQuizTwo;
 
 
 }
-     var_dump($_SESSION);
       ?>
 <!------------------------------------------------------------------->
 
