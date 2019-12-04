@@ -29,7 +29,7 @@ include('includes/functions.php');
       <!----------------------------------------------------------------->
       <!----------------------------------------------------------------->
       <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>1)	Try to reply to your emails as soon as possible and don't want to see your inbox unorganized:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio"  required value="SD"><span>Strongly Disagree</span>
@@ -49,7 +49,7 @@ include('includes/functions.php');
      </div>
      <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>2)	Organization is more important for you than adaptation:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio2" required value="SD"><span>Strongly Disagree</span>
@@ -69,7 +69,7 @@ include('includes/functions.php');
      </div>
           <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>3)	Your work and home environment is fairly organized:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio3" required  value="SD"><span>Strongly Disagree</span>
@@ -90,7 +90,7 @@ include('includes/functions.php');
     <!---button next-->
               <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>4)	Your travel plans are often well thought out:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio4" required value="SD"><span>Strongly Disagree</span>
@@ -110,7 +110,7 @@ include('includes/functions.php');
      </div>
                        <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>5)	Your method of work is closer to the random method of energy depletion than the :</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio5" required value="SD"><span>Strongly Disagree</span>
@@ -130,7 +130,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>6)	The ability to develop a plan and commitment to the most important part of the daily project:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio6" required value="SD"><span>Strongly Disagree</span>
@@ -150,7 +150,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>7)	You tend more to automatic improvisation than careful planning:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio7" required value="SD"><span>Strongly Disagree</span>
@@ -170,7 +170,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>8)	Prefer improvisation over thinking of a detailed plan:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio8" required value="SD"><span>Strongly Disagree</span>
@@ -190,7 +190,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>9)	Open options are more important to you than having a list of tasks:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio9" required  value="SD"><span>Strongly Disagree</span>
@@ -210,7 +210,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>10)	You have no difficulty in setting up a personal schedule and sticking to it:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio10" required value="SD"><span>Strongly Disagree</span>
@@ -230,7 +230,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>11)	Tend to postpone until there is not enough time to do everything:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio11" required value="SD"><span>Strongly Disagree</span>

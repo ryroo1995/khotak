@@ -29,7 +29,7 @@ include('includes/functions.php');
       <!----------------------------------------------------------------->
       <!----------------------------------------------------------------->
       <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>1)	Always indulge in thinking that you ignore or forget about you:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio"  required value="SD"><span>Strongly Disagree</span>
@@ -49,7 +49,7 @@ include('includes/functions.php');
      </div>
      <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>2)	Rarely do something out of pure curiosity:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio2" required value="SD"><span>Strongly Disagree</span>
@@ -69,7 +69,7 @@ include('includes/functions.php');
      </div>
           <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>3)	you see that you are proficient in the practical side more than the innovative side:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio3" required  value="SD"><span>Strongly Disagree</span>
@@ -90,7 +90,7 @@ include('includes/functions.php');
     <!---button next-->
               <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>4)	Rarely drift behind illusions and thoughts:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio4" required value="SD"><span>Strongly Disagree</span>
@@ -110,7 +110,7 @@ include('includes/functions.php');
      </div>
                        <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>5)	Often indulge in thinking when walking amidst landscapes:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio5" required value="SD"><span>Strongly Disagree</span>
@@ -130,7 +130,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>6)	your dreams focused on reality and what is happening:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio6" required value="SD"><span>Strongly Disagree</span>
@@ -150,7 +150,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>7)	You often spend a lot of time exploring unrealistic, impractical and exciting ideas at the same time:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio7" required value="SD"><span>Strongly Disagree</span>
@@ -170,7 +170,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>8)	often think about the reasons for human existence:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio8" required value="SD"><span>Strongly Disagree</span>
@@ -190,7 +190,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>9)	Your mind is always confused with unexplored plans and ideas:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio9" required  value="SD"><span>Strongly Disagree</span>
@@ -210,7 +210,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>10)	rely on your experience more than what goes on your cell in general:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio10" required value="SD"><span>Strongly Disagree</span>
@@ -230,7 +230,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>11)	always interested in unconventional and mysterious things, for example, books, art, :</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio11" required value="SD"><span>Strongly Disagree</span>

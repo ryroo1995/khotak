@@ -29,7 +29,7 @@ include('includes/functions.php');
       <!----------------------------------------------------------------->
       <!----------------------------------------------------------------->
       <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>1)	Make sure no one is harassed more important than winning any discussion:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio"  required value="SD"><span>Strongly Disagree</span>
@@ -49,7 +49,7 @@ include('includes/functions.php');
      </div>
      <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>2)	It is often difficult to communicate the feelings of individuals to others:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio2" required value="SD"><span>Strongly Disagree</span>
@@ -69,7 +69,7 @@ include('includes/functions.php');
      </div>
           <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>3)	In any discussion, the truth must be more important than the sensitive matters of individuals:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio3" required  value="SD"><span>Strongly Disagree</span>
@@ -90,7 +90,7 @@ include('includes/functions.php');
     <!---button next-->
               <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>4)	Rarely worry about how your actions affect others:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio4" required value="SD"><span>Strongly Disagree</span>
@@ -110,7 +110,7 @@ include('includes/functions.php');
      </div>
                        <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>5)	If you are a father, would you rather see your child grow more compassionate than intelligent?:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio5" required value="SD"><span>Strongly Disagree</span>
@@ -130,7 +130,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>6)	your feelings control you more than you control them:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio6" required value="SD"><span>Strongly Disagree</span>
@@ -150,7 +150,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>7)	If you are an employer, you will find it very difficult to fire loyal employees despite poor performance:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio7" required value="SD"><span>Strongly Disagree</span>
@@ -170,7 +170,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>8)	Logic is usually more important than feelings when it comes to making important decisions:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio8" required value="SD"><span>Strongly Disagree</span>
@@ -190,7 +190,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>9)	If your friend is sad about something, you are more likely to provide emotional support rather than suggest different ways of dealing with the problem:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio9" required  value="SD"><span>Strongly Disagree</span>
@@ -210,7 +210,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>10)	A commitment to right is more important than a spirit of cooperation when it comes to teamwork:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio10" required value="SD"><span>Strongly Disagree</span>
@@ -230,7 +230,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>11)	Considers that the views of all must be respected regardless of whether they are supported by facts or not:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio11" required value="SD"><span>Strongly Disagree</span>
@@ -251,7 +251,7 @@ include('includes/functions.php');
 
 
                    <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>12)	believes that the love of others to you much more important than being strong:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio12" required value="SD"><span>Strongly Disagree</span>
@@ -270,7 +270,7 @@ include('includes/functions.php');
     </label>
      </div>
                             <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>13)	Don't allow others to influence your actions:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio13" required value="SD"><span>Strongly Disagree</span>

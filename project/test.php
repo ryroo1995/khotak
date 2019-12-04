@@ -29,7 +29,7 @@ include('includes/functions.php');
       <!----------------------------------------------------------------->
       <!----------------------------------------------------------------->
       <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>1)	You find it difficult to introduce yourself to others:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio"  required value="SD"><span>Strongly Disagree</span>
@@ -49,7 +49,7 @@ include('includes/functions.php');
      </div>
      <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>2)	You don't usually want to start conversations:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio2" required value="SD"><span>Strongly Disagree</span>
@@ -69,7 +69,7 @@ include('includes/functions.php');
      </div>
           <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>3)	does not concern you to be the focus of attention of others:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio3" required  value="SD"><span>Strongly Disagree</span>
@@ -90,7 +90,7 @@ include('includes/functions.php');
     <!---button next-->
               <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>4)	It does not take long to start participating in social activities in the new workplace:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio4" required value="SD"><span>Strongly Disagree</span>
@@ -110,7 +110,7 @@ include('includes/functions.php');
      </div>
                        <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>5)	Feel fun when going to social events that include recreational activities:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio5" required value="SD"><span>Strongly Disagree</span>
@@ -130,7 +130,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>6)	You are a conservative and somewhat quiet person:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio6" required value="SD"><span>Strongly Disagree</span>
@@ -150,7 +150,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>7)	You feel more active after spending time with a group of individuals:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio7" required value="SD"><span>Strongly Disagree</span>
@@ -170,7 +170,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>8)	You usually find it difficult to feel relaxed when speaking in front of a large number of individuals:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio8" required value="SD"><span>Strongly Disagree</span>
@@ -190,7 +190,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>9)	If the room is full, you stay near the walls, and avoid staying in the middle area:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio9" required  value="SD"><span>Strongly Disagree</span>
@@ -210,7 +210,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>10)	often take the lead in social situations:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio10" required value="SD"><span>Strongly Disagree</span>
@@ -230,7 +230,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>The form below contains three inline radio buttons:</p>
+     <p>11)	They are usually highly motivated and active:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio11" required value="SD"><span>Strongly Disagree</span>
