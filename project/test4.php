@@ -25,7 +25,7 @@ include('includes/functions.php');
 <!------------------------------------------------------------------->
     <!------------------------------------------------------------------->
 <div class="questions">
-<form class="form-horizontal" action="test2.php" method="post" enctype="multipart/form-data">
+<form class="form-horizontal" action="result.php" method="post" enctype="multipart/form-data">
       <!----------------------------------------------------------------->
       <!----------------------------------------------------------------->
       <div class="question">
@@ -248,8 +248,12 @@ include('includes/functions.php');
       <input type="radio" name="optradio11" value="SA"><span>Strongly Agree</span>
     </label>
      </div>
+
+
+
+
           <br/>
-    <button   type="submit" name='test-button'class="btn btn-primary">Next</button>
+    <button   type="submit" name='test4-button'class="btn btn-primary">Next</button>
     <!----------------------------------------------------------------->
     <!----------------------------------------------------------------->
 
@@ -259,13 +263,55 @@ include('includes/functions.php');
 <?php
 //////////////////////////////////////////////////////////
 if($_SERVER['REQUEST_METHOD']=='POST'){
+        if(isset($_POST['test3-button'])){
+
+        $TestOne=$_POST['optradio'];
+         $TestOne2=$_POST['optradio2'];
+        $TestOne3=$_POST['optradio3'];
+        $TestOne4=$_POST['optradio4'];
+        $TestOne5=$_POST['optradio5'];
+        $TestOne6=$_POST['optradio6'];
+        $TestOne7=$_POST['optradio7'];
+        $TestOne8=$_POST['optradio8'];
+        $TestOne9=$_POST['optradio9'];
+        $TestOne10=$_POST['optradio10'];
+        $TestOne11=$_POST['optradio11'];
+        $TestOne12=$_POST['optradio12'];
+        $TestOne13=$_POST['optradio13'];
+
+        TestLetterOne($TestOne);
+        TestLetterTwo($TestOne2);
+        TestLetterTwo($TestOne3);
+        TestLetterTwo($TestOne4);
+        TestLetterOne($TestOne5);
+        TestLetterOne($TestOne6);
+        TestLetterOne($TestOne7);
+        TestLetterTwo($TestOne8);
+        TestLetterOne($TestOne9);
+        TestLetterTwo($TestOne10);
+        TestLetterOne($TestOne11);
+        TestLetterOne($TestOne12);
+        TestLetterTwo($TestOne13);
 
 
 
 
+        echo "letter five". $_SESSION['letterone']."Letter six".$_SESSION['letterTwo'];
+
+        if($_SESSION['letterone'] >$_SESSION['letterTwo']){
+            $x="T";
+        }else{
+           $x="F";
+        }
+ $TestQuizThree=$x;
+$_SESSION['TestQuizThree']=  $TestQuizThree;
+        echo "<br/>". $TestQuizThree;
 
 
-}
+
+        }}
+
+
      var_dump($_SESSION);
       ?>
 <!------------------------------------------------------------------->
