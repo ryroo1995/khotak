@@ -116,7 +116,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
   <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" name="Name" class="form-control" id="exampleInputEmail1" placeholder="Name of the University">
+    <input type="text" name="Name" class="form-control" id="exampleInputEmail1" placeholder="Name of the University" required>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Country</label>
@@ -369,7 +369,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   </div>
        <div class="form-group">
     <label for="exampleInputEmail1">Address</label>
-    <input type="text" name="address" class="form-control" id="exampleInputEmail1" placeholder="city">
+    <input type="text" name="address" required class="form-control" id="exampleInputEmail1" placeholder="city">
   </div>
              <div class="form-group">
     <label for="exampleInputEmail1">Subject</label>
@@ -399,11 +399,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
                 <div class="form-group">
     <label for="exampleInputEmail1">Link Of University</label>
-    <input type="text" name="link" class="form-control" id="exampleInputEmail1" placeholder="credit">
+    <input type="text" name="link" required class="form-control" id="exampleInputEmail1" placeholder="credit">
   </div>
                 <div class="form-group">
     <label for="exampleInputEmail1">Ranking</label>
-    <input type="number" name="rank" class="form-control" id="exampleInputEmail1" placeholder="ranking">
+    <input type="number" name="rank" required class="form-control" id="exampleInputEmail1" placeholder="ranking">
   </div>
 
 
