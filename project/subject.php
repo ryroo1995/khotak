@@ -26,7 +26,7 @@ if(isset($_GET['subjectId'])){
 <?php
 if($sub=="major"){
 ?>
-<div class="image-subject text-center">
+<div class="image-subjects text-center">
       <div class="container">
           <h2>Major</h2>
            <div class="row">
@@ -43,9 +43,12 @@ if($sub=="major"){
                 <?php
 
                      ?>
-<a href="?Id=<?php echo $maj['majorID'] ?>&subjectId=pageSub">
+                <div class="panel panel-primary">
+      <div class="panel-body"><a href="?Id=<?php echo $maj['majorID'] ?>&subjectId=pageSub">
                 <?php echo $maj['name']; ?>
-                </a>
+                </a></div>
+    </div>
+
                  </div>
                  <?php
                }
@@ -64,7 +67,7 @@ if($sub=="major"){
 
 
  ?>
- <div class="image-subject text-center">
+ <div class="image-subjects text-center">
       <div class="container">
           <h2>subjects</h2>
            <div class="row">
@@ -82,9 +85,13 @@ if($sub=="major"){
                 <?php
 
                      ?>
+               <div class="panel panel-primary">
+                   <div class="panel-body">
 <a href="?IdSub=<?php echo $subj['subjectID']; ?>&subjectId=pageSubs">
                 <?php echo $subj['name']; ?>
                 </a>
+                   </div>
+                   </div>
                  </div>
                  <?php
                }
@@ -116,7 +123,9 @@ if($sub=="major"){
     if($counts4 >0){
          ?>
           <h2><?php echo $subjects['name'];?></h2>
-          <p><?php echo $subjects['discription'];?></p>
+         <div class="alert alert-info">
+  <strong></strong> <?php echo $subjects['discription'];?>
+</div>
           <?php
              $stmt6=$con->prepare("SELECT universty.name
 FROM universty,subject_universty,subject
@@ -126,7 +135,13 @@ WHERE universty.univID=subject_universty.univID AND subject.subjectID=subject_un
                 $counts4=$stmt6->rowCount();
         foreach($subjects as $s){
            ?>
-           <p><?php echo $s['name'];?></p>
+
+
+            <div class="alert alert-success">
+  <strong></strong> <?php echo $s['name'];?>
+</div>
+
+
            <?php
         }
          ?>

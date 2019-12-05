@@ -14,16 +14,15 @@ include('includes/header.php');
             </div><!--end con-->
        </div><!-----------------end container-->
     </div>
-
+<div class="searching_section text-center">
 <!---------------------------------------------------------------------->
-<div class="content ">
-     <div class="overflow"></div>
+<div class="contents">
     <div class="container">
         <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
    <div class="forms-section">
 <div class="row">
     <div class="col-md-12">
-      <h2>Searching By University</h2>
+      <h2>Searching By University  <i class="fa fa-search "></i></h2>
        <div class="form-group">
     <label for="exampleInputEmail1">Country</label>
  <select id="country" name="country" class="form-control">
@@ -294,14 +293,13 @@ include('includes/header.php');
     </div><!--end container-->
 </div>
 <!---------------------------------------------------------------------->
-<div class="content ">
-     <div class="overflow"></div>
+<div class="contents">
     <div class="container">
         <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
    <div class="forms-section">
 <div class="row">
     <div class="col-md-12">
-      <h2>Searching By Subject</h2>
+      <h2>Searching By Subject <i class="fa fa-search "></i></h2>
 
              <div class="form-group">
     <label for="exampleInputEmail1">Subject</label>
@@ -332,6 +330,7 @@ include('includes/header.php');
         </form>
     </div><!--end container-->
 </div>
+    </div>
 <!---------------------------------------------------------------------->
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -339,9 +338,21 @@ if(isset($_POST['univ-button'])){
         $country=$_POST['country'];
     $type=$_POST['type'];
     ?>
-
+                  <div class="searching">
                               <div class="container">
-            <h2>Table</h2>
+            <h2 class="text-center">Searching By University</h2>
+            <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">University Name</th>
+      <th scope="col">University Country</th>
+      <th scope="col">University Address</th>
+        <th scope="col">University Type</th>
+        <th scope="col">Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+
            <?php
             $stmt=$con->prepare("SELECT  universty.name as nn, universty.contry , universty.address , universty.type , subject.name  FROM universty,subject_universty,subject WHERE universty.univID=subject_universty.univID AND subject.subjectID=subject_universty.subjectID  AND universty.contry =? and universty.type =?");
               $stmt->execute(array($country,$type));
@@ -349,23 +360,39 @@ if(isset($_POST['univ-button'])){
 
                 foreach( $subjects as $sa){
                     ?>
+                 <tr>
+                    <td><?php echo $sa['nn']?></td>
+                    <td><?php echo $sa['contry']?></td>
+                    <td><?php echo $sa['address']?></td>
+                     <td><?php echo $sa['type']?></td>
+                     <td><?php echo $sa['name']?></td>
+            </tr>
 
-                <p><?php echo  $sa['nn'];?></p>
-                 <p><?php echo $sa['contry'];?></p>
-                 <p><?php echo $sa['address'];?></p>
-                 <p><?php echo $sa['type'];?></p>
-                 <p><?php echo $sa['name'];?></p>
 
                   <?php
                 }
     ?>
+                 </table>
       </div>
+                      </div>
+
     <?php
 }
 if(isset($_POST['sub-button'])){
   ?>
    <div class="container">
-    <h2>Table</h2>
+    <h2 class="text-center">Searching By Subject</h2>
+                   <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Subject</th>
+      <th scope="col">University Country</th>
+      <th scope="col">University Address</th>
+        <th scope="col">University Type</th>
+        <th scope="col">University Name</th>
+    </tr>
+  </thead>
+  <tbody>
        <?php
         $subject=$_POST['subject'];
                 $stmt=$con->prepare("SELECT  universty.name , universty.contry , universty.address , universty.type , subject.name as nn  FROM universty,subject_universty,subject WHERE universty.univID=subject_universty.univID AND subject.subjectID=subject_universty.subjectID AND subject.name =?");
@@ -374,17 +401,18 @@ if(isset($_POST['sub-button'])){
 
                 foreach( $subjects as $sa){
                     ?>
-                    <div class="container">
+                                   <tr>
+                    <td><?php echo $sa['nn']?></td>
+                    <td><?php echo $sa['contry']?></td>
+                    <td><?php echo $sa['address']?></td>
+                     <td><?php echo $sa['type']?></td>
+                     <td><?php echo $sa['name']?></td>
+            </tr>
 
-                <p><?php echo  $sa['nn'];?></p>
-                 <p><?php echo $sa['contry'];?></p>
-                 <p><?php echo $sa['address'];?></p>
-                 <p><?php echo $sa['type'];?></p>
-                 <p><?php echo $sa['name'];?></p>
-                 </div>
                   <?php
                 }
     ?>
+      </table>
 </div>
     <?php
 }
