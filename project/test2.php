@@ -29,7 +29,7 @@ include('includes/functions.php');
       <!----------------------------------------------------------------->
       <!----------------------------------------------------------------->
       <div class="question">
-     <p>1)	Always indulge in thinking that you ignore or forget about you:</p>
+     <p>1)	Always indulge in thinking that you ignore or forget round you:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio"  required value="SD"><span>Strongly Disagree</span>
@@ -110,7 +110,7 @@ include('includes/functions.php');
      </div>
                        <!--------------------------------------------->
            <div class="question">
-     <p>5)	Often indulge in thinking when walking amidst landscapes:</p>
+     <p>5)	Often indulge in thinking when walking among landscapes:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio5" required value="SD"><span>Strongly Disagree</span>
@@ -210,7 +210,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>10)	rely on your experience more than what goes on your cell in general:</p>
+     <p>10)	rely on your experience more than what goes on your magination in general:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio10" required value="SD"><span>Strongly Disagree</span>

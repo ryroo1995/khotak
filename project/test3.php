@@ -130,7 +130,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>6)	your feelings control you more than you control them:</p>
+     <p>6)	your feelings control you more than you control it:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio6" required value="SD"><span>Strongly Disagree</span>

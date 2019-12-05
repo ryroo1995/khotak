@@ -90,7 +90,7 @@ include('includes/functions.php');
     <!---button next-->
               <!--------------------------------------------->
            <div class="question">
-     <p>4)	Your travel plans are often well thought out:</p>
+     <p>4)	Your travel plans are often well studed out:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio4" required value="SD"><span>Strongly Disagree</span>
@@ -130,7 +130,7 @@ include('includes/functions.php');
      </div>
                                 <!--------------------------------------------->
            <div class="question">
-     <p>6)	The ability to develop a plan and commitment to the most important part of the daily project:</p>
+     <p>6)	The ability to develop a plan and commitment is the most important part of the daily project:</p>
 
     <label class="radio-inline">
       <input type="radio" name="optradio6" required value="SD"><span>Strongly Disagree</span>
