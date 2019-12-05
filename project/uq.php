@@ -3,6 +3,8 @@ include('includes/header.php');
 
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
+    global $con;
+    $formError=array();
     $names=$_POST['Name'];
     $country=$_POST['country'];
     $address=$_POST['address'];
@@ -19,8 +21,54 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
    global $names;
 
+              $filterrank=filter_var($number,FILTER_VALIDATE_INT);
 
-    //insert code
+if(isset($names)){
+          $filterName=filter_var($names,FILTER_SANITIZE_STRING);
+        if(filter_var($names,FILTER_SANITIZE_STRING !=true)){
+            $formError[]='This NAME UNIVERSITY is not valid';
+        }
+
+            $getAll=$con->prepare("Select name From universty");
+        $getAll->execute();
+        $university=$getAll->fetchAll();
+        foreach($university as $sa){
+            if( $names ==$sa['name']){
+               $formError[]='This NAME UNIVERSITY is Exits';
+            }
+        }
+
+
+
+}
+//check Email
+    if(isset($email)){
+        $filterEmail=filter_var($email,FILTER_SANITIZE_EMAIL);
+        if(filter_var($email,FILTER_SANITIZE_EMAIL !=true)){
+            $formError[]='This Email is not valid';
+        }
+
+        $getAll=$con->prepare("Select email From employ");
+        $getAll->execute();
+        $allemploy=$getAll->fetchAll();
+        foreach($allemploy as $em){
+            if($email ==$em['email']){
+               $formError[]='This Email is Exits';
+            }
+        }
+          if(isset($number)){
+              $filterPhone=filter_var($number,FILTER_VALIDATE_INT);
+              if(strlen($filterPhone)==10){
+                  $formError[]='The phone be equal 10';
+                 }
+              }
+    }
+///end check email//////////////////
+
+
+
+if(empty($formError)){
+      //insert code
                       /////////////////start notification
                      $stmtnj=$con->prepare("INSERT INTO
                                 universty(name,contry,address,type,rank,link)
@@ -30,9 +78,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                         'contry'     =>$country,
                         'address'    =>$address,
                         'type'       =>$type,
-                        'rank'       => $rank ,
+                        'rank'       => $filterrank ,
                         'link'       =>$link
                     ));
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////
                         if($stmtnj){
                 //fetch subject
@@ -92,8 +142,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                         'univID'       =>$id
                     ));
                 header('Location: index.php');
+
+
+
+
+
                         }//end insert all
-}
+    }
+}///request
 
 
 
@@ -457,6 +513,26 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     </div><!--end container-->
 </div>
 <!---------------------------------------------------------------------->
+<div class="test-error text-center">
+    <?php
+    if(!empty($formError)){
+       foreach($formError as $error){
+
+           ?>
+    <div class="alert alert-success">
+  <strong></strong><?php echo $error."</br>"; ?>
+</div>
+    <?php
+
+       }
+    }
+
+
+    if(isset($successMessage)){
+        echo "<div>".$successMessage."</div>";
+    }
+    ?>
+</div>
 <?php
 include('includes/footer.php');
 ?>
