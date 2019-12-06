@@ -21,8 +21,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
    global $names;
 
-              $filterrank=filter_var($number,FILTER_VALIDATE_INT);
-
 if(isset($names)){
           $filterName=filter_var($names,FILTER_SANITIZE_STRING);
         if(filter_var($names,FILTER_SANITIZE_STRING !=true)){
@@ -56,15 +54,18 @@ if(isset($names)){
                $formError[]='This Email is Exits';
             }
         }
-          if(isset($number)){
-              $filterPhone=filter_var($number,FILTER_VALIDATE_INT);
-              if(strlen($filterPhone)==10){
-                  $formError[]='The phone be equal 10';
-                 }
-              }
+
     }
 ///end check email//////////////////
-
+      if(isset($number)){
+              $filterPhone=filter_var($number,FILTER_VALIDATE_INT);
+              if(strlen($number)>10){
+                  $formError[]='The phone be must equal 10';
+                 }
+                        if(strlen($number)<10){
+                  $formError[]='The phone be 10';
+                 }
+              }
 
 
 if(empty($formError)){
@@ -131,6 +132,7 @@ if(empty($formError)){
  /////////////////////////////////////////////////////////////////////////////////////////////
 
                 //insert employ
+                            global $filterPhone;
                     $stmaa=$con->prepare("INSERT INTO
                                 employ(name,number,email,position,univID)
                                 VALUES(:name,:number,:email,:position,:univID)");
@@ -455,7 +457,7 @@ if(empty($formError)){
 
                 <div class="form-group">
     <label for="exampleInputEmail1">Link Of University</label>
-    <input type="text" name="link" required class="form-control" id="exampleInputEmail1" placeholder="credit">
+    <input type="text" name="link" required class="form-control" id="exampleInputEmail1" placeholder="credit" >
   </div>
                 <div class="form-group">
     <label for="exampleInputEmail1">Ranking</label>
@@ -486,15 +488,15 @@ if(empty($formError)){
         </div>
 <div class="form-group">
     <label>Name</label>
-    <input name="names" type="text" class="form-control" id="name-ceo" placeholder="ENTER NAME">
+    <input name="names" type="text" class="form-control" id="name-ceo" placeholder="ENTER NAME" required>
   </div>
                    <div class="form-group">
     <label>Email</label>
-    <input name="email" type="text" class="form-control" id="email-ceo" placeholder="ENTER EMAIL">
+    <input name="email" type="text" class="form-control" id="email-ceo" placeholder="ENTER EMAIL" required>
   </div>
                    <div class="form-group">
-    <label>Number</label>
-    <input name="number" type="text" class="form-control" id="number-ceo" placeholder="ENTER number">
+    <label>Number Phone</label>
+    <input name="number" type="number" min="10"  class="form-control" id="number-ceo" placeholder="ENTER number phone" required>
   </div>
 
         </div>
