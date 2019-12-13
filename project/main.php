@@ -116,12 +116,60 @@ include('includes/header.php');
 <section class="section4 text-center">
 
 
-    <div class="container">
+    <div class="fullcard">
 
-        <div class="row">
-            <div class="col-md-4" id="box"> hay </div>
-            <div class="col-md-4" id="box"> hay </div>
-            <div class="col-md-4" id="box"> hay </div>
+        <div class="card">
+            <div class="face face1">
+            <div class="content">
+                <img src="img/sketch.png">
+                <h3>rabia </h3>
+            </div>
+            </div>
+
+
+            <div class="face face2">
+            <div class="content">
+               <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
+               <a href="#">kkin</a>
+            </div>
+             </div>
+
+        </div>
+
+        <div class="card">
+            <div class="face face1">
+            <div class="content">
+                <img src="img/sketch.png">
+                <h3>rabia </h3>
+            </div>
+            </div>
+
+
+            <div class="face face2">
+            <div class="content">
+               <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
+               <a href="#">kkin</a>
+            </div>
+             </div>
+
+        </div>
+
+        <div class="card">
+            <div class="face face1">
+            <div class="content">
+                <img src="img/sketch.png">
+                <h3>rabia </h3>
+            </div>
+            </div>
+
+
+            <div class="face face2">
+            <div class="content">
+               <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
+               <a href="#">kkin</a>
+            </div>
+             </div>
+
         </div>
     </div>
 
