@@ -8,6 +8,7 @@ include('includes/connect.php');
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/fpsyle.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel='stylesheet' type='text/css' href='css/style.php' />
 <title>platform for gruduated studet </title>
     </head>
     <body>
