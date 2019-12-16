@@ -97,10 +97,9 @@ global $res;
     ?>
    <div class="sec">
    <div class="resp">
-       <div class="container">
-        <div class="row">
 
-        <div class="col-md-3">
+
+
     <div class="card">
         <div class="box">
             <div class="percent">
@@ -115,8 +114,8 @@ global $res;
             <h2 class="text"><?php echo $_SESSION['TestQuizOneALPHA'];?></h2>
         </div>
     </div>
-       </div>
-      <div class="col-md-3">
+
+
     <div class="card">
         <div class="box">
             <div class="percent">
@@ -131,8 +130,8 @@ global $res;
             <h2 class="text"><?php echo $_SESSION['TestQuizTwoALPHA'];?></h2>
         </div>
     </div>
-            </div>
-      <div class="col-md-3">
+
+
     <div class="card">
         <div class="box">
             <div class="percent">
@@ -147,8 +146,8 @@ global $res;
             <h2 class="text"><?php echo $_SESSION['TestQuizThreeALPHA'];?></h2>
         </div>
     </div>
-            </div>
-       <div class="col-md-3">
+
+
     <div class="card">
         <div class="box">
             <div class="percent">
@@ -163,10 +162,9 @@ global $res;
             <h2 class="text"><?php echo $_SESSION['TestQuizFourALPHA'];?></h2>
         </div>
     </div>
-           </div>
-      </div><!--end row-->
 
-           </div>
+
+
 </div>
  </div><!--end sec-->
 

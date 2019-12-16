@@ -16,7 +16,6 @@ $four = $_SESSION['resp4'];
     justify-content: center;
     display: flex;
     background: white ;
-    margin-top: 33px;
     min-height: 10vh;
 }
 .resp{
