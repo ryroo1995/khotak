@@ -22,19 +22,6 @@ include('includes/header.php');
 </div>
 <!-------------------------------------------------------------------------------------------------------------------------------------->
 
-<section class="section1 text-center">
-    <div class="container">
-
-        <h1 id="htext">What is KHOTAK?</h1>
-        <p class="p1">
-            Khotak, website is a system to whom been interested for education, especially for graduations from high school universities and institutions. Although, it can help educational field in many ways such as investment learning, advertising, Science, knowledge and marketing.
-            Moreover, it aims to serve the graduated with the technological advances’ revolution, by making it easier for them to find the best specialty without too much efforts and time. This also reduces the effort and time for the educational centers too.
-        </p>
-        <hr>
-    </div>
-
-</section>
-=======
    <!-- section 1------------------------------------------------------------------------------------------------------------------ -->
    <section class="section1 text-center">
        <div class="container">
@@ -48,7 +35,6 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
        </div>
 </div>
    </section>
->>>>>>> origin/master
 
 
 
@@ -135,7 +121,7 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
 
         <div class="card">
             <div class="face face1">
-            <div class="content">
+            <div class="contents">
                 <img src="img/sketch.png">
                 <h3>rabia </h3>
             </div>
@@ -143,7 +129,7 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
 
 
             <div class="face face2">
-            <div class="content">
+            <div class="contents">
                <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
                <a href="#">kkin</a>
             </div>
@@ -153,7 +139,7 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
 
         <div class="card">
             <div class="face face1">
-            <div class="content">
+            <div class="contents">
                 <img src="img/sketch.png">
                 <h3>rabia </h3>
             </div>
@@ -161,7 +147,7 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
 
 
             <div class="face face2">
-            <div class="content">
+            <div class="contents">
                <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
                <a href="#">kkin</a>
             </div>
@@ -171,7 +157,7 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
 
         <div class="card">
             <div class="face face1">
-            <div class="content">
+            <div class="contents">
                 <img src="img/sketch.png">
                 <h3>rabia </h3>
             </div>
@@ -179,7 +165,7 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
 
 
             <div class="face face2">
-            <div class="content">
+            <div class="contents">
                <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
                <a href="#">kkin</a>
             </div>
