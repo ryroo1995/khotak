@@ -1,8 +1,10 @@
 
 <?php
     header("Content-type: text/css; charset: UTF-8");
-
-   $x = 100;
+$one = 90;
+   $two = 85;
+$three=60;
+$four = 60;
 
 ?>
 
@@ -11,7 +13,7 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    background: #101010;
+    background: white ;
     min-height: 10vh;
 }
 .resp{
@@ -129,17 +131,22 @@ svg circle:nth-child(2) {
 
 }
 .card:nth-child(1) svg circle:nth-child(2){
-     stroke-dashoffset: calc(440 - (440 * 90) / 100);
+     stroke-dashoffset: calc(440 - (440 * <?php echo $one ; ?>) / 100);
     stroke:#00ff43;
 
 }
 .card:nth-child(2) svg circle:nth-child(2){
-     stroke-dashoffset: calc(440 - (440 * 85) / 100);
+     stroke-dashoffset: calc(440 - (440 * <?php echo $two; ?>) / 100);
     stroke:#00a1ff;
 
 }
 .card:nth-child(3) svg circle:nth-child(2){
-     stroke-dashoffset: calc(440 - (440 * <?php echo $x; ?>) / 100);
+     stroke-dashoffset: calc(440 - (440 * <?php echo $three; ?>) / 100);
+    stroke:#ff04f7;
+
+}
+.card:nth-child(4) svg circle:nth-child(2){
+     stroke-dashoffset: calc(440 - (440 * <?php echo $four; ?>) / 100);
     stroke:#ff04f7;
 
 }

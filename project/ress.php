@@ -46,6 +46,20 @@ include('includes/functions.php');
             <h2 class="text">javascript</h2>
         </div>
     </div>
+    <div class="card">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx='70' cy='70' r='70'></circle>
+                    <circle cx='70' cy='70' r='70'></circle>
+                </svg>
+                <div class="number">
+                    <h2>60<span>%</span></h2>
+                </div>
+            </div>
+            <h2 class="text">paython</h2>
+        </div>
+    </div>
 </div>
  </div>
 <?php
