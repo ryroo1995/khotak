@@ -1,10 +1,12 @@
 
 <?php
+ob_start();
+session_start();
     header("Content-type: text/css; charset: UTF-8");
-$one = 90;
-   $two = 85;
-$three=60;
-$four = 60;
+$one = $_SESSION['resp1'];
+   $two =$_SESSION['resp2'];
+$three=$_SESSION['resp3'];
+$four = $_SESSION['resp4'];
 
 ?>
 
@@ -151,4 +153,4 @@ svg circle:nth-child(2) {
 
 }
 
-
+<?php ob_end_flush();?>

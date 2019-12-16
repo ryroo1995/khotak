@@ -1,1 +1,0 @@
-SELECT personalaty.name AS personalty , job.name as jobs ,major.name AS major FROM personalaty,job,major,subject WHERE job.personID =personalaty.personID AND job.majorID = major.majorID AND personalaty.personID = 'INFP'

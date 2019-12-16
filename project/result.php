@@ -1,4 +1,5 @@
 <?php
+
 include('includes/header.php');
 include('includes/functions.php');
 ?>
@@ -18,66 +19,6 @@ include('includes/functions.php');
        </div><!-----------------end container-->
     </div>
 <!-------------------------------------------------------------------------------------------------------------------------------------->
-   <div class="sec">
-   <div class="resp">
-    <div class="card">
-        <div class="box">
-            <div class="percent">
-                <svg>
-                    <circle cx='70' cy='70' r='70'></circle>
-                    <circle cx='70' cy='70' r='70'></circle>
-                </svg>
-                <div class="number">
-                    <h2>90<span>%</span></h2>
-                </div>
-            </div>
-            <h2 class="text">html</h2>
-        </div>
-    </div>
-    <div class="card">
-        <div class="box">
-            <div class="percent">
-                <svg>
-                    <circle cx='70' cy='70' r='70'></circle>
-                    <circle cx='70' cy='70' r='70'></circle>
-                </svg>
-                <div class="number">
-                    <h2>85<span>%</span></h2>
-                </div>
-            </div>
-            <h2 class="text">css</h2>
-        </div>
-    </div>
-    <div class="card">
-        <div class="box">
-            <div class="percent">
-                <svg>
-                    <circle cx='70' cy='70' r='70'></circle>
-                    <circle cx='70' cy='70' r='70'></circle>
-                </svg>
-                <div class="number">
-                    <h2>60<span>%</span></h2>
-                </div>
-            </div>
-            <h2 class="text">javascript</h2>
-        </div>
-    </div>
-    <div class="card">
-        <div class="box">
-            <div class="percent">
-                <svg>
-                    <circle cx='70' cy='70' r='70'></circle>
-                    <circle cx='70' cy='70' r='70'></circle>
-                </svg>
-                <div class="number">
-                    <h2>60<span>%</span></h2>
-                </div>
-            </div>
-            <h2 class="text">paython</h2>
-        </div>
-    </div>
-</div>
- </div>
 
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -114,31 +55,106 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
 
+        $_SESSION['res7']=$_SESSION['letterone'];
+        $_SESSION['res8']=$_SESSION['letterTwo'];
+
+        $_SESSION['resz']=$_SESSION['res1']+$_SESSION['res2'];
 
 
+        if($_SESSION['res7']>$_SESSION['res8']){
+            $_SESSION['resn']=$_SESSION['res7'];
+        }else{
+            $_SESSION['resn']=$_SESSION['res8'];
+        }
 
+        $_SESSION['resp4']=($_SESSION['resn']/$_SESSION['resz'])*100;
         if($_SESSION['letterone'] >$_SESSION['letterTwo']){
             $x="J";
+            $y="Judgment";
         }else{
            $x="P";
+            $y='Perception';
         }
  $TestQuizFour=$x;
 $_SESSION['TestQuizFour']=  $TestQuizFour;
+$_SESSION['TestQuizFourALPHA']=  $y;
 
 
     }
-
-
-
-
-
 }
+
 $res=$_SESSION['TestQuizOne'].$_SESSION['TestQuizTwo'].$_SESSION['TestQuizThree'].$_SESSION['TestQuizFour'];
 global $res;
+
+
       ?>
 <!------------------------------------------------------------------->
 <div class="result text-center">
    <div class="container">
+   <?php
+
+
+    ?>
+   <div class="sec">
+   <div class="resp">
+    <div class="card">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx='70' cy='70' r='70'></circle>
+                    <circle cx='70' cy='70' r='70'></circle>
+                </svg>
+                <div class="number">
+                    <h2><?php echo (int)$_SESSION['resp1'];?><span>%</span></h2>
+                </div>
+            </div>
+            <h2 class="text"><?php echo $_SESSION['TestQuizOneALPHA'];?></h2>
+        </div>
+    </div>
+    <div class="card">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx='70' cy='70' r='70'></circle>
+                    <circle cx='70' cy='70' r='70'></circle>
+                </svg>
+                <div class="number">
+                    <h2><?php echo (int)$_SESSION['resp2'];?><span>%</span></h2>
+                </div>
+            </div>
+            <h2 class="text"><?php echo $_SESSION['TestQuizTwoALPHA'];?></h2>
+        </div>
+    </div>
+    <div class="card">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx='70' cy='70' r='70'></circle>
+                    <circle cx='70' cy='70' r='70'></circle>
+                </svg>
+                <div class="number">
+                    <h2><?php echo (int) $_SESSION['resp3'];?><span>%</span></h2>
+                </div>
+            </div>
+            <h2 class="text"><?php echo $_SESSION['TestQuizThreeALPHA'];?></h2>
+        </div>
+    </div>
+    <div class="card">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx='70' cy='70' r='70'></circle>
+                    <circle cx='70' cy='70' r='70'></circle>
+                </svg>
+                <div class="number">
+                    <h2><?php echo (int)    $_SESSION['resp4'];?><span>%</span></h2>
+                </div>
+            </div>
+            <h2 class="text"><?php echo $_SESSION['TestQuizFourALPHA'];?></h2>
+        </div>
+    </div>
+</div>
+ </div>
 
           <p>Result:<?php echo $res; ?></p>
 
@@ -155,6 +171,10 @@ global $res;
                  <p><?php echo $personDIS;?></p>
 
                  <!---------------------------table---------------->
+
+
+
+
                  <table class="table">
   <thead>
     <tr>
@@ -187,6 +207,10 @@ global $res;
                  <?php
                }
            ?>
+
+
+
+
 </div>
 </div>
 

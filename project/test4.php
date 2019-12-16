@@ -293,16 +293,31 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         TestLetterOne($TestOne12);
         TestLetterTwo($TestOne13);
 
+        $_SESSION['res5']=$_SESSION['letterone'];
+        $_SESSION['res6']=$_SESSION['letterTwo'];
 
+
+                    $_SESSION['resz']=$_SESSION['res5']+$_SESSION['res6'];
+
+
+        if($_SESSION['res5']>$_SESSION['res6']){
+            $_SESSION['resn']=$_SESSION['res5'];
+        }else{
+            $_SESSION['resn']=$_SESSION['res6'];
+        }
+
+        $_SESSION['resp3']=($_SESSION['resn']/$_SESSION['resz'])*100;
 
         if($_SESSION['letterone'] >$_SESSION['letterTwo']){
             $x="T";
+            $y='Thinking';
         }else{
            $x="F";
+            $y='Feeling';
         }
  $TestQuizThree=$x;
 $_SESSION['TestQuizThree']=  $TestQuizThree;
-
+$_SESSION['TestQuizThreeALPHA']=$y;
 
 
         }}

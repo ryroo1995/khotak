@@ -327,18 +327,30 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         TestLetterTwo($TestOne11);
 
 
+        $_SESSION['res3']=$_SESSION['letterone'];
+        $_SESSION['res4']=$_SESSION['letterTwo'];
+
+        $_SESSION['resz']=$_SESSION['res3']+$_SESSION['res4'];
 
 
+        if($_SESSION['res3']>$_SESSION['res4']){
+            $_SESSION['resn']=$_SESSION['res3'];
+        }else{
+            $_SESSION['resn']=$_SESSION['res4'];
+        }
 
+        $_SESSION['resp2']=($_SESSION['resn']/$_SESSION['resz'])*100;
 
         if($_SESSION['letterone'] >$_SESSION['letterTwo']){
             $x="N";
+            $y='Intuition';
         }else{
            $x="S";
+            $y='Sensing';
         }
  $TestQuizTwo=$x;
 $_SESSION['TestQuizTwo']=  $TestQuizTwo;
-
+$_SESSION['TestQuizTwoALPHA']=$y;
 
     }
 

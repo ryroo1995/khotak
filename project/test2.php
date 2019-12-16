@@ -288,17 +288,33 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
 
+        $_SESSION['res1']=$_SESSION['letterone'];
+        $_SESSION['res2']=$_SESSION['letterTwo'];
+
+        $_SESSION['resz']=$_SESSION['res1']+$_SESSION['res2'];
+
+
+        if($_SESSION['res1']>$_SESSION['res2']){
+            $_SESSION['resn']=$_SESSION['res1'];
+        }else{
+            $_SESSION['resn']=$_SESSION['res2'];
+        }
+
+        $_SESSION['resp1']=($_SESSION['resn']/$_SESSION['resz'])*100;
+
 
 
 
         if($_SESSION['letterone'] >$_SESSION['letterTwo']){
             $x="E";
+            $y='Extraversion';
         }else{
            $x="I";
+            $y='Introversion';
         }
  $TestQuizOne=$x;
 $_SESSION['TestQuizOne']= $TestQuizOne;
-
+$_SESSION['TestQuizOneALPHA']=$y;
 
     }
 
