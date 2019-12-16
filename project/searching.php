@@ -14,15 +14,15 @@ include('includes/header.php');
             </div><!--end con-->
        </div><!-----------------end container-->
     </div>
-<div class="searching_section text-center">
+<div class="searching_section ">
 <!---------------------------------------------------------------------->
-<div class="contents">
+<div class="contentss">
     <div class="container">
         <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
    <div class="forms-section">
 <div class="row">
     <div class="col-md-12">
-      <h2>Searching By University  <i class="fa fa-search "></i></h2>
+      <h2 class="text-center">Searching By University  <i class="fa fa-search "></i></h2>
        <div class="form-group">
     <label for="exampleInputEmail1">Country</label>
  <select id="country" name="country" class="form-control">
@@ -280,7 +280,7 @@ include('includes/header.php');
         <option value="traditional">traditional Learnig</option>
     </select>
   </div>
-<button type="submit" name='univ-button' class="btn btn-primary">Submit</button>
+<button type="submit" name='univ-button' class="btn btn-primary">Search</button>
 
 
     </div>
@@ -293,13 +293,13 @@ include('includes/header.php');
     </div><!--end container-->
 </div>
 <!---------------------------------------------------------------------->
-<div class="contents">
+<div class="contents  contentss">
     <div class="container">
         <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
    <div class="forms-section">
 <div class="row">
     <div class="col-md-12">
-      <h2>Searching By Subject <i class="fa fa-search "></i></h2>
+      <h2 class="text-center">Searching By Subject <i class="fa fa-search "></i></h2>
 
              <div class="form-group">
     <label for="exampleInputEmail1">Subject</label>
@@ -318,7 +318,7 @@ include('includes/header.php');
 
     </select>
   </div>
-<button type="submit" name='sub-button'class="btn btn-primary">Submit</button>
+<button type="submit" name='sub-button'class="btn btn-primary">Search</button>
 
 
     </div>

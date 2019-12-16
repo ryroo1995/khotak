@@ -119,7 +119,7 @@ svg circle {
     width: 100%;
     height: 100&;
     fill: none;
-    stroke : #191919;
+    stroke : #f0f0f0;
     stroke-width:10;
     stroke-linecap: round ;
     transform: translate(5px,5px);

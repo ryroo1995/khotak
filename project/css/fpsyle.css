@@ -183,6 +183,7 @@
 .section1 p {
     font-size: 21px;
     color: #08526d;
+        padding: 20px;
 }
 
 .section2 {
@@ -250,10 +251,12 @@
     color: #ffff;
     font-size: 16px;
     font-weight: bolder;
-    border: 5px solid #ffffff;
+    border: 30px solid #08526d;
+    border-left: none;
+    border-bottom: none;
     margin-top: 10px;
-    border-radius: 20px;
-    margin: 20px;
+    border-radius: 50px;
+    margin: 20px
 }
 
 .Tators input {
@@ -394,8 +397,23 @@ padding: 20px;
 }
 
 /**********************************************************/
-.contents{
-    background-color: #2c3e50;
+.contentss{
+    background-color: #122329;
+}
+.contentg .overflow{
+    background-color: rgba(26, 26, 26, 0.7);
+}
+.content  .btn-primary,
+.contentss  .btn-primary{
+        width: 100%;
+    background-color: #113643;
+    border-radius: 20px;
+}
+.ceo,.ceo2{
+    margin: 15px;
+}
+.ceo h2{
+            margin-top: 18px;
 }
 /**********************************************************/
 

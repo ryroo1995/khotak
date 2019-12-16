@@ -3,6 +3,8 @@ include('includes/header.php');
 
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
+    global $con;
+    $formError=array();
     $names=$_POST['Name'];
     $country=$_POST['country'];
     $address=$_POST['address'];
@@ -19,8 +21,55 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
    global $names;
 
+if(isset($names)){
+          $filterName=filter_var($names,FILTER_SANITIZE_STRING);
+        if(filter_var($names,FILTER_SANITIZE_STRING !=true)){
+            $formError[]='This NAME UNIVERSITY is not valid';
+        }
 
-    //insert code
+            $getAll=$con->prepare("Select name From universty");
+        $getAll->execute();
+        $university=$getAll->fetchAll();
+        foreach($university as $sa){
+            if( $names ==$sa['name']){
+               $formError[]='This NAME UNIVERSITY is Exits';
+            }
+        }
+
+
+
+}
+//check Email
+    if(isset($email)){
+        $filterEmail=filter_var($email,FILTER_SANITIZE_EMAIL);
+        if(filter_var($email,FILTER_SANITIZE_EMAIL !=true)){
+            $formError[]='This Email is not valid';
+        }
+
+        $getAll=$con->prepare("Select email From employ");
+        $getAll->execute();
+        $allemploy=$getAll->fetchAll();
+        foreach($allemploy as $em){
+            if($email ==$em['email']){
+               $formError[]='This Email is Exits';
+            }
+        }
+
+    }
+///end check email//////////////////
+      if(isset($number)){
+              $filterPhone=filter_var($number,FILTER_VALIDATE_INT);
+              if(strlen($number)>10){
+                  $formError[]='The phone be must equal 10';
+                 }
+                        if(strlen($number)<10){
+                  $formError[]='The phone be 10';
+                 }
+              }
+
+
+if(empty($formError)){
+      //insert code
                       /////////////////start notification
                      $stmtnj=$con->prepare("INSERT INTO
                                 universty(name,contry,address,type,rank,link)
@@ -30,9 +79,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                         'contry'     =>$country,
                         'address'    =>$address,
                         'type'       =>$type,
-                        'rank'       => $rank ,
+                        'rank'       => $filterrank ,
                         'link'       =>$link
                     ));
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////
                         if($stmtnj){
                 //fetch subject
@@ -81,6 +132,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
  /////////////////////////////////////////////////////////////////////////////////////////////
 
                 //insert employ
+                            global $filterPhone;
                     $stmaa=$con->prepare("INSERT INTO
                                 employ(name,number,email,position,univID)
                                 VALUES(:name,:number,:email,:position,:univID)");
@@ -92,8 +144,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                         'univID'       =>$id
                     ));
                 header('Location: index.php');
+
+
+
+
+
                         }//end insert all
-}
+    }
+}///request
 
 
 
@@ -106,20 +164,22 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 <!-------------------------------------------------------------------------------------------------------------------------------------->
 
-<div class="content ">
+<div class="content contentg ">
      <div class="overflow"></div>
     <div class="container">
         <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
    <div class="forms-section">
 <div class="row">
-    <div class="col-sm-6">
+<div class="ceo2">
 
+        <div class="col-sm-6">
+<h2 class="text-center">Add New University</h2>
   <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
+    <label for="exampleInputEmail1">Name University </label>
     <input type="text" name="Name" class="form-control" id="exampleInputEmail1" placeholder="Name of the University" required>
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Country</label>
+    <label for="exampleInputEmail1">Country University</label>
  <select id="country" name="country" class="form-control">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -368,11 +428,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             </select>
   </div>
        <div class="form-group">
-    <label for="exampleInputEmail1">Address</label>
+    <label for="exampleInputEmail1">Address University</label>
     <input type="text" name="address" required class="form-control" id="exampleInputEmail1" placeholder="city">
   </div>
              <div class="form-group">
-    <label for="exampleInputEmail1">Subject</label>
+    <label for="exampleInputEmail1">Subject University</label>
     <select class="form-control" name="subject">
  <?php
             $stmtt=$con->prepare("select * FROM subject");
@@ -399,18 +459,19 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
                 <div class="form-group">
     <label for="exampleInputEmail1">Link Of University</label>
-    <input type="text" name="link" required class="form-control" id="exampleInputEmail1" placeholder="credit">
+    <input type="text" name="link" required class="form-control" id="exampleInputEmail1" placeholder="credit" >
   </div>
                 <div class="form-group">
-    <label for="exampleInputEmail1">Ranking</label>
+    <label for="exampleInputEmail1">Ranking University</label>
     <input type="number" name="rank" required class="form-control" id="exampleInputEmail1" placeholder="ranking">
   </div>
 
 
     </div>
+    </div>
 
 
-    <!--------------------------form two--------------------------------------------------->
+    <!--------------------------end form two--------------------------------------------------->
 
 
     <div class="col-md-6">
@@ -418,8 +479,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
            <!-------------------------------------------------------------------------->
         <div class="ceo">
 
-                <h2>Staff</h2>
+                <h2 class="text-center">Staff</h2>
         <div class="form-group">
+            <label for="exampleInputEmail1">Type of Staff </label>
            <select id="position" name="position" class="form-control">
                 <option value="CEO">CEO</option>
                 <option value="VICE">VICE CHAIRE</option>
@@ -429,22 +491,22 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
         </div>
 <div class="form-group">
-    <label>Name</label>
-    <input name="names" type="text" class="form-control" id="name-ceo" placeholder="ENTER NAME">
+    <label>Name Staff</label>
+    <input name="names" type="text" class="form-control" id="name-ceo" placeholder="ENTER NAME" required>
   </div>
                    <div class="form-group">
-    <label>Email</label>
-    <input name="email" type="text" class="form-control" id="email-ceo" placeholder="ENTER EMAIL">
+    <label>Email Staff</label>
+    <input name="email" type="text" class="form-control" id="email-ceo" placeholder="ENTER EMAIL" required>
   </div>
                    <div class="form-group">
-    <label>Number</label>
-    <input name="number" type="text" class="form-control" id="number-ceo" placeholder="ENTER number">
+    <label>Number Phone Staff</label>
+    <input name="number" type="number" min="10"  class="form-control" id="number-ceo" placeholder="ENTER number phone" required>
   </div>
 
         </div>
 
 
-         <button type="submit" class="btn btn-primary">Submit</button>
+         <button type="submit" class="btn btn-primary text-center ">Submit</button>
 
 
     </div>
@@ -457,6 +519,26 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     </div><!--end container-->
 </div>
 <!---------------------------------------------------------------------->
+<div class="test-error text-center">
+    <?php
+    if(!empty($formError)){
+       foreach($formError as $error){
+
+           ?>
+    <div class="alert alert-success">
+  <strong></strong><?php echo $error."</br>"; ?>
+</div>
+    <?php
+
+       }
+    }
+
+
+    if(isset($successMessage)){
+        echo "<div>".$successMessage."</div>";
+    }
+    ?>
+</div>
 <?php
 include('includes/footer.php');
 ?>

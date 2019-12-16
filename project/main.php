@@ -21,6 +21,7 @@ include('includes/header.php');
     <!-----------------end container-->
 </div>
 <!-------------------------------------------------------------------------------------------------------------------------------------->
+<<<<<<< HEAD
 <!-- section 1------------------------------------------------------------------------------------------------------------------ -->
 <section class="section1 text-center">
     <div class="container">
@@ -34,6 +35,21 @@ include('includes/header.php');
     </div>
 
 </section>
+=======
+   <!-- section 1------------------------------------------------------------------------------------------------------------------ -->
+   <section class="section1 text-center">
+       <div class="container">
+<div class="panel panel-primary">
+    <div class="panel-heading" id="htext">What is KHOTAK?</div>
+       <p class="p1">
+Khotak, website is a system to whom been interested for education, especially for graduations from high school  universities and institutions. Although, it can help educational field in many ways such as investment learning, advertising, Science, knowledge and marketing.
+Moreover, it aims to serve the graduated with the technological advances’ revolution, by making it easier for them to find the best specialty without too much efforts and time. This also reduces the effort and time for the educational centers too.
+      </p>
+           <hr>
+       </div>
+</div>
+   </section>
+>>>>>>> origin/master
 
 
 

@@ -29,7 +29,7 @@ include('includes/header.php');
    <div class="container">
     <h1> World University Rankings 2018-2019</h1>
 
-<table class="tg">
+<table class="table">
   <tr>
     <th class="tg-0lax">World Rank</th>
     <th class="tg-0lax">Institution</th>
