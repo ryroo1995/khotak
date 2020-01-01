@@ -122,16 +122,32 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
         <div class="card">
             <div class="face face1">
             <div class="contents">
-                <img src="img/sketch.png">
-                <h3>rabia </h3>
+                <img src="img/mohamed.gif">
             </div>
             </div>
 
 
             <div class="face face2">
             <div class="contents">
-               <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
-               <a href="#">kkin</a>
+                 <h1>Mohammed Al-Masri</h1>
+               <p>The partner of the development</p>
+            </div>
+             </div>
+
+        </div>
+
+        <div class="card">
+            <div class="face face1">
+            <div class="contents"  >
+                <img src="img/rabia.gif" >
+            </div>
+            </div>
+
+
+            <div class="face face2">
+            <div class="contents">
+               <h1>Mohamed Rabia Al-mathlouthi</h1>
+               <p>The owner of the idea of KHOTAK and its designer</p>
             </div>
              </div>
 
@@ -140,34 +156,16 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
         <div class="card">
             <div class="face face1">
             <div class="contents">
-                <img src="img/sketch.gif">
-                <h3>rabia </h3>
+                <img src="img/carl.gif">
             </div>
             </div>
 
 
             <div class="face face2">
             <div class="contents">
-               <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
-               <a href="#">kkin</a>
-            </div>
-             </div>
+              <h1>Carl Gustav Jung</h1>
+               <p>The inventor of theory of (16personalty)</p>
 
-        </div>
-
-        <div class="card">
-            <div class="face face1">
-            <div class="contents">
-                <img src="img/sketch.png">
-                <h3>rabia </h3>
-            </div>
-            </div>
-
-
-            <div class="face face2">
-            <div class="contents">
-               <p>sjvbbdsbbvsdjvbksdjvbsdjbvbkjsd</p>
-               <a href="#">kkin</a>
             </div>
              </div>
 

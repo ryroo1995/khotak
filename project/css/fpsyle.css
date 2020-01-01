@@ -474,24 +474,16 @@ padding: 20px;
 
 }
 .fullcard .card .face.face1 .contents {
-    opacity: 0.2;
+
   transition: 0.5s;
 }
 .fullcard .card:hover .face.face1 .contents {
     opacity: 1;
 }
 .fullcard .card .face.face1 .contents img {
-   max-width: 100px;
+   max-width: 300px;
 }
-.fullcard .card .face.face1 .contents h3{
-    margin: 10px 0 0;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-    font-size: 1.5em;
 
-
-}
 
 .fullcard .card .face.face2{
 
@@ -508,7 +500,7 @@ padding: 20px;
 
 }
 .fullcard .card:hover .face.face2{
-    transform: translateY(0px);
+    transform: translateY(75px);
 }
 .fullcard .card .face.face2 .contents p{
 
