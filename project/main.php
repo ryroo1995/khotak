@@ -140,7 +140,7 @@ Moreover, it aims to serve the graduated with the technological advances’ revo
         <div class="card">
             <div class="face face1">
             <div class="contents">
-                <img src="img/sketch.png">
+                <img src="img/sketch.gif">
                 <h3>rabia </h3>
             </div>
             </div>
